@@ -81,5 +81,24 @@ def get_mask_by_color(img, color_filter):
   lower = range[color_filter]['lower'] 
   return cv2.inRange(hsv, lower, upper )
 
+def adjust_gamma(img, gamma=1.0):
+	# build a lookup table mapping the pixel values [0, 255] to
+	# their adjusted gamma values
+  gamma = gamma if gamma > 0 else 0.1
+  invGamma = 1.0 / gamma
+  table = np.array([((i / 255.0) ** invGamma) * 255 for i in np.arange(0, 256)]).astype("uint8")
+  # apply gamma correction using the lookup table
+  return cv2.LUT(img, table)
 
+def test_multigamma_value(img_original , lower=0.0, upper=3.5, step=0.5):
+  # loop over various values of gamma
+  for gamma in np.arange(lower, upper, step):
+    # ignore when gamma is 1 (there will be no change to the image)
+    if gamma == 1:
+      continue
+    # apply gamma correction and show the images
+    adjusted = adjust_gamma(img_original, gamma=gamma)
+    cv2.putText(adjusted, "g={}".format(gamma), (10, 30),cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 3)
+    #cv2_imshow(np.hstack([adjusted]))
+  return
 
