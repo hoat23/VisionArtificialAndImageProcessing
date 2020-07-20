@@ -102,3 +102,11 @@ def test_multigamma_value(img_original , lower=0.0, upper=3.5, step=0.5):
     #cv2_imshow(np.hstack([adjusted]))
   return
 
+def converting_color(img_src, code=cv2.COLOR_BGR2RGB):
+  # cv2.COLOR_BGR2RGB  | cv2.COLOR_RGB2BGR
+  # im_rgb = im_bgr[:, :, [2, 1, 0]]
+  # im_rgb = im_bgr[:, :, ::-1]
+  img_out = cv2.cvtColor(img_src, code)
+  return img_out
+
+
