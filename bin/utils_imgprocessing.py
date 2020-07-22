@@ -51,13 +51,13 @@ def plot_histogram(list_histr,color=('r','g','b')):
       plt.xlim([0,256])
       #plt.ylim([0,1])
     plt.show()
-
+"""
 def get_list_img(directory):
   os.chdir(directory_work+directory)
   list_img = !ls -1 *.jpg
   os.chdir(directory_work)
   return list_img
-
+"""
 def get_mask_by_color(img, color_filter):
   hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
   #np.array([0,120,70]) np.array([10,255,255])
