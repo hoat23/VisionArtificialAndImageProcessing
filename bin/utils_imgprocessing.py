@@ -9,7 +9,15 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 #######################################################################################
+directory_work = None
+
+def set_directory_work(directory):
+  global directory_work
+  directory_work = directory
+  return
+
 def read_image(namefile, directory='/images/CUOX_XML'):
+  global directory_work
   img_json = {
       "name": namefile,
       "directory": directory,
@@ -36,7 +44,7 @@ def read_image(namefile, directory='/images/CUOX_XML'):
     flag_error = True
   finally:
     img_json.update({'error': flag_error})
-  os.chdir(directory_work)
+    os.chdir(directory_work)
   return img_json
 
 def histogram(img, color=('r','g','b'),scale=1):
@@ -54,6 +62,7 @@ def plot_histogram(list_histr,color=('r','g','b')):
     plt.show()
 """
 def get_list_img(directory):
+  global directory_work
   os.chdir(directory_work+directory)
   list_img = !ls -1 *.jpg
   os.chdir(directory_work)
