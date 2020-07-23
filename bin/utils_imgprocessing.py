@@ -14,6 +14,7 @@ directory_work = None
 def set_directory_work(directory):
   global directory_work
   directory_work = directory
+  print("set_directory_work | [{}]".format(directory_work))
   return
 
 def read_image(namefile, directory='/images/CUOX_XML'):
