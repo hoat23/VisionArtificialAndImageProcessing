@@ -120,4 +120,23 @@ def converting_color(img_src, code=cv2.COLOR_BGR2RGB):
   img_out = cv2.cvtColor(img_src, code)
   return img_out
 
+##############################################################################################################################
+def filter_using_matrix(filter_value, matrix_orig, labels, fill_value = np.nan):
+    mask_filter = np.where(labels == filter_value, labels, fill_value)
+    matrix_filter = np.where( mask_filter == filter_value , matrix_orig, mask_filter)
+    return matrix_filter
 
+def filter_label(img, labels, filter_value):
+    b_ = filter_using_matrix(filter_value, b, segments1)
+    g_ = filter_using_matrix(filter_value, g, segments1)
+    r_ = filter_using_matrix(filter_value, r, segments1)
+    img = cv2.merge((b_,g_,r_))
+    return img
+
+def split_labels(img, labels):
+    labels = segments1
+    list_labels = np.unique(labels)
+    for filter_value in list_labels:
+        tmp_img = filter_label(img, labels, filter_value)
+        cv2.imwrite("label_{0:02d}.jpg".format(filter_value), tmp_img)
+##############################################################################################################################
