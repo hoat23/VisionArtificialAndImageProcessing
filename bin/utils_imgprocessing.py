@@ -17,6 +17,14 @@ def set_directory_work(directory):
   print("set_directory_work | [{}]".format(directory_work))
   return
 
+def load_image_from_url(url, readFlag=cv2.IMREAD_COLOR):
+    # download the image, convert it to a NumPy array, and then read
+    # it into OpenCV format
+    resp = urlopen(url)
+    image = np.asarray(bytearray(resp.read()), dtype="uint8")
+    image = cv2.imdecode(image, readFlag)
+    return image
+
 def read_image(namefile, directory='/images/CUOX_XML'):
   global directory_work
   img_json = {
