@@ -9,8 +9,9 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 #######################################################################################
+##########################   Global Variables  ########################################
 directory_work = None
-
+#######################################################################################
 def set_directory_work(directory):
   global directory_work
   directory_work = directory
@@ -62,6 +63,7 @@ def histogram(img, color=('r','g','b'),scale=1):
       histr = cv2.calcHist([img],[i],None,[256],[0,256])/scale
       list_histr.append(histr)
   return list_histr
+#######################################################################################
 
 def plot_histogram(list_histr,color=('r','g','b')):
     for i,col in enumerate(color):
@@ -69,6 +71,15 @@ def plot_histogram(list_histr,color=('r','g','b')):
       plt.xlim([0,256])
       #plt.ylim([0,1])
     plt.show()
+
+def plot_img(img):
+  width = img.shape[1] / 50.0
+  height = img.shape[0] * width/img.shape[1]
+  f = plt.figure(figsize=(width, height))
+  plt.imshow(img)
+
+#######################################################################################
+	
 """
 def get_list_img(directory):
   global directory_work
@@ -128,7 +139,7 @@ def converting_color(img_src, code=cv2.COLOR_BGR2RGB):
   img_out = cv2.cvtColor(img_src, code)
   return img_out
 
-##############################################################################################################################
+#######################################################################################
 def filter_using_matrix(filter_value, matrix_orig, labels, fill_value = np.nan):
     mask_filter = np.where(labels == filter_value, labels, fill_value)
     matrix_filter = np.where( mask_filter == filter_value , matrix_orig, mask_filter)
@@ -147,4 +158,3 @@ def split_labels(img, labels):
     for filter_value in list_labels:
         tmp_img = filter_label(img, labels, filter_value)
         cv2.imwrite("label_{0:02d}.jpg".format(filter_value), tmp_img)
-##############################################################################################################################
