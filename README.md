@@ -17,3 +17,14 @@ Where matrix r,g & b have 2x2 size, like this:
 r=g=b = [[0. 0.]
          [0. 0.]]
 ```
+
+# More Code
+
+Loading code in memory from github url
+
+```
+def load_code_from_url(url_path):
+  code_str = urlopen(url_path).read()
+  code_str = code_str.decode('utf-8')
+  exec(code_str)
+```
