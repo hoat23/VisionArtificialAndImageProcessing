@@ -169,9 +169,9 @@ def split_labels(img, labels, saveimg=False, fill_value = np.nan):
     list_labels = np.unique(labels)
     list_segments = []
     for filter_value in list_labels:
-        tmp_img = filter_label(img, labels, filter_value, fill_value = np.nan)
+        tmp_img = filter_label(img, labels, filter_value, fill_value = fill_value)
         if saveimg:
-           cv2.imwrite("label_{0:02d}.jpg".format(filter_value), tmp_img)
+            cv2.imwrite("label_{0:02d}.jpg".format(filter_value), tmp_img)
         list_segments.append(tmp_img)
     return list_segments
 #######################################################################################
