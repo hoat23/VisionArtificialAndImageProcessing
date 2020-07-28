@@ -18,7 +18,7 @@ r=g=b = [[0. 0.]
          [0. 0.]]
 ```
 
-# More Code
+# Utilities 
 
 Loading code in memory from github url
 
