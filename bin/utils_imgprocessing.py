@@ -158,20 +158,22 @@ def filter_using_matrix(filter_value, matrix_orig, labels, fill_value = np.nan):
     matrix_filter = np.where( mask_filter == filter_value , matrix_orig, mask_filter)
     return matrix_filter
 
-def filter_label(img, labels, filter_value):
-    b_ = filter_using_matrix(filter_value, b, segments1)
-    g_ = filter_using_matrix(filter_value, g, segments1)
-    r_ = filter_using_matrix(filter_value, r, segments1)
+def filter_label(img, labels, filter_value, fill_value = np.nan):
+    b_ = filter_using_matrix(filter_value, b, labels, fill_value = fill_value)
+    g_ = filter_using_matrix(filter_value, g, labels, fill_value = fill_value)
+    r_ = filter_using_matrix(filter_value, r, labels, fill_value = fill_value)
     img = cv2.merge((b_,g_,r_))
     return img
 
-def split_labels(img, labels):
-    labels = segments1
+def split_labels(img, labels, saveimg=False, fill_value = np.nan):
     list_labels = np.unique(labels)
+    list_segments = []
     for filter_value in list_labels:
-        tmp_img = filter_label(img, labels, filter_value)
-        cv2.imwrite("label_{0:02d}.jpg".format(filter_value), tmp_img)
-
+        tmp_img = filter_label(img, labels, filter_value, fill_value = np.nan)
+	if saveimg:
+           cv2.imwrite("label_{0:02d}.jpg".format(filter_value), tmp_img)
+	list_segments.append(tmp_img)
+    return list_segments
 #######################################################################################
 def grab_contours(cnts):
     # if the length the contours tuple returned by cv2.findContours
