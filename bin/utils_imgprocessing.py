@@ -159,6 +159,7 @@ def filter_using_matrix(filter_value, matrix_orig, labels, fill_value = np.nan):
     return matrix_filter
 
 def filter_label(img, labels, filter_value, fill_value = np.nan):
+    b,g,r = cv2.split(img)
     b_ = filter_using_matrix(filter_value, b, labels, fill_value = fill_value)
     g_ = filter_using_matrix(filter_value, g, labels, fill_value = fill_value)
     r_ = filter_using_matrix(filter_value, r, labels, fill_value = fill_value)
