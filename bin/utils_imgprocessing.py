@@ -79,7 +79,7 @@ def plot_img(img):
   f = plt.figure(figsize=(width, height))
   plt.imshow(img)
 
-def plot_list_img(list_img, rows=1, cols=2):
+def plot_list_img(list_img, rows=1, cols=2, axis='off'):
   size = rows * cols 
   if size < len(list_img):
     rows = int(len(list_img)/cols)
@@ -87,7 +87,7 @@ def plot_list_img(list_img, rows=1, cols=2):
     title = "Img{0:02d}".format(num)
     plt.subplot(rows,cols,num+1)
     plt.title(title)
-    plt.axis('on')
+    plt.axis(axis)
     plt.imshow(img)
     #print("[{0:02d} | {1:02d}] [{2}]".format(rows,cols, title))
 
