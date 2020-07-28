@@ -28,3 +28,5 @@ def load_code_from_url(url_path):
   code_str = code_str.decode('utf-8')
   exec(code_str)
 ```
+
+More info: https://www.w3resource.com/python/built-in-function/compile.php
