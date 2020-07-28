@@ -159,7 +159,31 @@ def split_labels(img, labels):
     for filter_value in list_labels:
         tmp_img = filter_label(img, labels, filter_value)
         cv2.imwrite("label_{0:02d}.jpg".format(filter_value), tmp_img)
+
 #######################################################################################
+def grab_contours(cnts):
+    # if the length the contours tuple returned by cv2.findContours
+    # is '2' then we are using either OpenCV v2.4, v4-beta, or
+    # v4-official
+    if len(cnts) == 2:
+        cnts = cnts[0]
+
+    # if the length of the contours tuple is '3' then we are using
+    # either OpenCV v3, v4-pre, or v4-alpha
+    elif len(cnts) == 3:
+        cnts = cnts[1]
+
+    # otherwise OpenCV has changed their cv2.findContours return
+    # signature yet again and I have no idea WTH is going on
+    else:
+        raise Exception(("Contours tuple must have length 2 or 3, "
+            "otherwise OpenCV changed their cv2.findContours return "
+            "signature yet again. Refer to OpenCV's documentation "
+            "in that case"))
+
+    # return the actual contours array
+    return cnts
+
 def auto_canny(image, sigma=0.33):
     # compute the median of the single channel pixel intensities
     v = np.median(image)
