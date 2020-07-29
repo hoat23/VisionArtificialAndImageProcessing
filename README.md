@@ -17,6 +17,13 @@ Where matrix r,g & b have 2x2 size, like this:
 r=g=b = [[0. 0.]
          [0. 0.]]
 ```
+
+Creating a white mask like other image reference.
+
+```
+img_black = np.ones_like( img_reference ) * 255
+```
+
 # PNG images
 
 This type of images have 4 channels: r,g,b & alpha
