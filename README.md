@@ -17,6 +17,14 @@ Where matrix r,g & b have 2x2 size, like this:
 r=g=b = [[0. 0.]
          [0. 0.]]
 ```
+# PNG images
+
+This type of images have 4 channels: r,g,b & alpha
+
+```
+img_4ch = cv2.merge((r, g, b, alpha))
+cv2.imwrite("result.png", img_4ch)
+```
 
 # Utilities 
 
