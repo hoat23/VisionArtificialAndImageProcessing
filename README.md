@@ -23,7 +23,14 @@ This type of images have 4 channels: r,g,b & alpha
 
 ```
 img_4ch = cv2.merge((r, g, b, alpha))
-cv2.imwrite("result.png", img_4ch)
+cv2.imwrite("img_4ch.png", img_4ch)
+```
+
+Adding the alpha mask to image
+
+```
+img_4ch = np.dstack([bgr, alpha])
+cv2.imwrite("img_4ch.png", img_4ch)
 ```
 
 # Utilities 
