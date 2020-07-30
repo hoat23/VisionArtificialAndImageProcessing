@@ -18,12 +18,6 @@ r=g=b = [[0. 0.]
          [0. 0.]]
 ```
 
-Creating a white mask like other image reference.
-
-```
-img_black = np.ones_like( img_reference ) * 255
-```
-
 # PNG images
 
 This type of images have 4 channels: r,g,b & alpha
@@ -51,6 +45,12 @@ diff_im = cv2.absdiff(im, im2)
 ```
 # dtype is 'uint8' in images
 mask = np.ones( img_rgb.shape[:2], dtype=img_rgb.dtype ) * 0
+```
+
+#### Creating a white black image like other image reference.
+
+```
+img_black = np.ones_like( img_reference ) * 255
 ```
 
 # Local Scale-Invariant Features
