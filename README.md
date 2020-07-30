@@ -73,6 +73,10 @@ def load_code_from_url(url_path):
   code_str = code_str.decode('utf-8')
   exec(code_str)
   return code_str
+
+# This is util when are using Jupyter notebook.
+url_code_github = "https://raw.githubusercontent.com/hoat23/VisionArtificialAndImageProcessing/master/bin/utils_imgprocessing.py"
+exec( load_code_from_url(url_code_github) )
 ```
 
 More info: https://www.w3resource.com/python/built-in-function/compile.php
