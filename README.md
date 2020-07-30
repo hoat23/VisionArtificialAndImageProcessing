@@ -47,6 +47,14 @@ diff_im = cv2.subtract(im, im2)
 diff_im = cv2.absdiff(im, im2)
 ```
 
+# Local Scale-Invariant Features
+
+Reference: 
+- https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf
+- https://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12/arandjelovic12.pdf
+
+
+
 # Utilities 
 
 Loading code in memory from github url
