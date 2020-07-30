@@ -46,6 +46,12 @@ cv2.imwrite("img_4ch.png", img_4ch)
 diff_im = cv2.subtract(im, im2)
 diff_im = cv2.absdiff(im, im2)
 ```
+#### Creating a mask using 'img_rgb' like reference.
+
+```
+# dtype is 'uint8' in images
+mask = np.ones( img_rgb.shape[:2], dtype=img_rgb.dtype ) * 0
+```
 
 # Local Scale-Invariant Features
 
