@@ -2,7 +2,7 @@
 
 A image 2x2[px] representation in RGB is:
 ```
-#img = numpy.zeros([2,2,3])
+#img = numpy.zeros([2,2,3], dtype='uint8')
 img = [[[0. 0. 0.]
         [0. 0. 0.]]
        [[0. 0. 0.]
