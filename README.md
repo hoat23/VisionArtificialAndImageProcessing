@@ -40,6 +40,13 @@ img_4ch = np.dstack([bgr, alpha])
 cv2.imwrite("img_4ch.png", img_4ch)
 ```
 
+# Useful commands
+
+```
+diff_im = cv2.subtract(im, im2)
+diff_im = cv2.absdiff(im, im2)
+```
+
 # Utilities 
 
 Loading code in memory from github url
