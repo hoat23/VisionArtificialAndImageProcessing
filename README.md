@@ -57,6 +57,8 @@ img_black = np.ones_like( img_reference ) * 255
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
 
+$$x_{1,2} = \frac{-b \pm \sqrt{b^2-4ac}}{2b}.$$
+
 Reference: 
 - https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf
 - https://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12/arandjelovic12.pdf
