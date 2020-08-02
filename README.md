@@ -55,6 +55,8 @@ img_black = np.ones_like( img_reference ) * 255
 
 # Local Scale-Invariant Features
 
+\insertequation{e = 2\pi \int^{a}_{b} f(x)dx}
+
 Reference: 
 - https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf
 - https://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12/arandjelovic12.pdf
