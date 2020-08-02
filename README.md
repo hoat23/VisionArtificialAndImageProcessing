@@ -55,7 +55,9 @@ img_black = np.ones_like( img_reference ) * 255
 
 # Local Scale-Invariant Features
 
-\insertequation{e = 2\pi \int^{a}_{b} f(x)dx}
+```math
+SE = \frac{\sigma}{\sqrt{n}}
+```
 
 Reference: 
 - https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf
