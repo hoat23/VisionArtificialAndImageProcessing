@@ -109,6 +109,7 @@ print "RootSIFT: kps=%d, descriptors=%s " % (len(kps), descs.shape)
 Reference: 
 - https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf
 - https://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12/arandjelovic12.pdf
+- https://www.pyimagesearch.com/2015/04/13/implementing-rootsift-in-python-and-opencv/
 
 # Useful Formules 
 
