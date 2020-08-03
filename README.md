@@ -53,6 +53,10 @@ mask = np.ones( img_rgb.shape[:2], dtype=img_rgb.dtype ) * 0
 img_black = np.ones_like( img_reference ) * 255
 ```
 
+## Working with countours
+
+...
+
 # Local Scale-Invariant Features
 
 - Step 1: Compute SIFT descriptors using your favorite SIFT library.
