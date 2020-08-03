@@ -61,7 +61,7 @@ img_black = np.ones_like( img_reference ) * 255
 
 ## Code
 
-### Clase
+### Clase RootSIFT (rootsift.py)
 ```
 # import the necessary packages
 import numpy as np
