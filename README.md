@@ -55,6 +55,10 @@ img_black = np.ones_like( img_reference ) * 255
 
 # Local Scale-Invariant Features
 
+- Step 1: Compute SIFT descriptors using your favorite SIFT library.
+- Step 2: L1-normalize each SIFT vector.
+- Step 3: Take the square root of each element in the SIFT vector. Then the vectors are L2 normalized
+
 Reference: 
 - https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf
 - https://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12/arandjelovic12.pdf
