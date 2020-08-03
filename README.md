@@ -59,15 +59,15 @@ Reference:
 - https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf
 - https://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12/arandjelovic12.pdf
 
-# Normalize
+# Useful Formules 
 
 ### L1 Normalize 
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;S=\sum_{i=1}^{n}%20{\mid}y_i-f(x_i){\mid}" title="L1 normalize" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;S=\sum_{i=1}^{n}%20{\mid}y_i-f(x_i){\mid}" title="L1 normalize" alt="centered image"/>
 
 ### L2 Normalize
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;S=\sum_{i=1}^{n}%20(y_i-f(x_i))^2" title="L2 normalize" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;S=\sum_{i=1}^{n}%20(y_i-f(x_i))^2" title="L2 normalize" alt="centered image"/>
 
 
 # Utilities 
