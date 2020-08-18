@@ -55,6 +55,20 @@ img_black = np.ones_like( img_reference ) * 255
 
 ## Working with countours
 
+The countours are define by array with the same size of the image original.
+
+#### Image
+
+<div align="center">
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_04_20x20.jpg" width="400" align="center"/>
+</div>
+
+#### Matriz countours
+
+<div align="center">
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_05_labels.png" width="400" align="center"/>
+</div>
+
 ...
 
 # Local Scale-Invariant Features
@@ -64,13 +78,6 @@ img_black = np.ones_like( img_reference ) * 255
 - Step 3: Take the square root of each element in the SIFT vector. Then the vectors are L2 normalized
 
 ## Code
-
-## SLIC
-
-
-<div align="center">
-<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_05_labels.png" width="400" align="center"/>
-</div>
 
 ### Clase RootSIFT (rootsift.py)
 ```
