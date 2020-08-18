@@ -140,7 +140,7 @@ class RootSIFT:
 ```
 
 ### Runing
-```
+```python
 # import the necessary packages
 from rootsift import RootSIFT
 import cv2
@@ -180,7 +180,7 @@ Reference:
 
 Loading code in memory from github url
 
-```
+```python
 from urllib.request import urlopen
 
 def load_code_from_url(url_path):
