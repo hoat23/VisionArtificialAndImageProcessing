@@ -74,7 +74,7 @@ The contours are define by array with the same size of the image original.
 Filter the values 2 from the labels matriz and appliying contours detection:
 
 <div align="center">
-<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_06_contours.png" width="420" align="center"/>
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_06_contours.png" width="460" align="center"/>
 </div>
 
 # Local Scale-Invariant Features
