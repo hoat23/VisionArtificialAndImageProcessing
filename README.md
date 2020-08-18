@@ -57,6 +57,36 @@ img_black = np.ones_like( img_reference ) * 255
 
 The contours are define by array with the same size of the image original.
 
+```python
+from skimage import data, segmentation
+from skimage.segmentation import mark_boundaries
+from skimage.future import graph
+from google.colab.patches import cv2_imshow
+
+img_tmp = imagen_in_rgb
+
+# Aplying SLIC algorithm
+n_segments = 4
+labels = segmentation.slic(img_tmp, compactness=30, n_segments=n_segments)
+img_boundaries = mark_boundaries(img_tmp, labels,color=(255,0,0),background_label=3)
+
+# Countours Detection
+filter_value = 2, threshold_level = 1 
+
+mask_8bit = np.uint8( np.where(labels == filter_value, 0 , 255) )
+_, binarized = cv2.threshold(mask_8bit, threshold_level, 255, cv2.THRESH_BINARY)
+contours, hierarchy = cv2.findContours(binarized, mode, cv2.CHAIN_APPROX_SIMPLE)
+
+
+# Drawing contours
+
+countourIdx=255, color = (0,255,0), thickness = 3
+
+img_show = cv2.drawContours(image_copy, contours, -1, (255, 255, 255), 1) 
+plt.imshow(img_show)
+plt.show()
+```
+
 #### Image
 
 <div align="center">
