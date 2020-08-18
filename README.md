@@ -53,23 +53,29 @@ mask = np.ones( img_rgb.shape[:2], dtype=img_rgb.dtype ) * 0
 img_black = np.ones_like( img_reference ) * 255
 ```
 
-## Working with countours
+## Working with contours
 
-The countours are define by array with the same size of the image original.
+The contours are define by array with the same size of the image original.
 
 #### Image
 
 <div align="center">
-<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_04_20x20.jpg" width="400" align="center"/>
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_04_20x20.jpg" width="200" align="center"/>
 </div>
 
-#### Matriz countours
+#### Matriz contours
 
 <div align="center">
-<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_05_labels.png" width="400" align="center"/>
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_05_labels.png" width="200" align="center"/>
 </div>
 
-...
+## Contours detection
+
+Filter the values 2 from the labels matriz and appliying contours detection:
+
+<div align="center">
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_06_contours.png" width="200" align="center"/>
+</div>
 
 # Local Scale-Invariant Features
 
