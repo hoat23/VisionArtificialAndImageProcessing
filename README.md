@@ -65,6 +65,13 @@ img_black = np.ones_like( img_reference ) * 255
 
 ## Code
 
+## SLIC
+
+
+<div align="center">
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_05_labels.png" width="400" align="center"/>
+</div>
+
 ### Clase RootSIFT (rootsift.py)
 ```
 # import the necessary packages
