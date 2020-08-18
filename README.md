@@ -89,15 +89,16 @@ Filter the values 2 from the labels matriz and applying contours detection:
 
 ```python
 # Countours Detection
-filter_value = 2, threshold_level = 1 
+filter_value = 2; threshold_level = 0; mode = cv2.RETR_EXTERNAL # _LIST _EXTERNAL _CCOMP _TREE
 
-mask_8bit = np.uint8( np.where(labels == filter_value, 0 , 255) )
+mask_8bit = np.uint8( np.where(labels == filter_value, 1 , 0) )
+print(mask_8bit)
 _, binarized = cv2.threshold(mask_8bit, threshold_level, 255, cv2.THRESH_BINARY)
 contours, hierarchy = cv2.findContours(binarized, mode, cv2.CHAIN_APPROX_SIMPLE)
 
 # Drawing contours
-countourIdx=255, color = (0,255,0), thickness = 3
-img_show = cv2.drawContours(img_tmp, contours, -1, (255, 255, 255), 1) 
+countourIdx=255; color = (0,255,0); thickness = 3
+img_show = cv2.drawContours(img_orig, contours, -1, (0, 255, 0), 1) 
 plt.imshow(img_show)
 plt.show()
 ```
