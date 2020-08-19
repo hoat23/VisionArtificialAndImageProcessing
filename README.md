@@ -107,6 +107,8 @@ plt.show()
 <img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_06_contours.png" width="460" align="center"/>
 </div>
 
+More info: https://docs.opencv.org/3.4/dd/d49/tutorial_py_contour_features.html
+
 # Local Scale-Invariant Features
 
 - Step 1: Compute SIFT descriptors using your favorite SIFT library.
