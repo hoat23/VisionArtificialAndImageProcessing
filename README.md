@@ -125,9 +125,18 @@ More info: https://docs.opencv.org/3.4/dd/d49/tutorial_py_contour_features.html
 Like one-dimensional signals, images can also be filtered with various types of filters, such as low pass filters (FPB), high pass filters (FPA), band pass filters, etc. While an FPB helps to eliminate noise in the image or blur the image, an FPA helps to find the edges in an image.
 The cv2.filter2D () function, available in OpenCV, allows to apply a convolution between a given kernel and an image. An example of a kernel is an averaging filter, like the 5x5 FPB shown below:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;K=\frac{1}{25}\begin{bmatrix}&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?K=\frac{1}{25}\begin{bmatrix}&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\end{bmatrix}" title="Matrix" alt="centered image"/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;K=\frac{1}{25}\begin{bmatrix}&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\end{bmatrix}" title="Matrix" alt="centered image"/>
 
+Filtering a given image with the above kernel works as follows: a 5 × 5 window is centered on each pixel of the image. The pixels contained in this window are added and divided by 25, and the resulting value is assigned to the pixel.
+This is equivalent to calculating the average value of the falling pixels in the 5 × 5 window. The operation is repeated on all the pixels of the image, giving rise to the filtered image. The following code generates the K kernel and applies it to an image:
 
+```python
+# Kernel
+kernel = np.ones((5,5),np.float32)/25
+
+# Filter the image using the kernel
+dst = cv2.filter2D(image,-1,kernel)
+```
 
 # Local Scale-Invariant Features
 
