@@ -118,9 +118,7 @@ plt.show()
 
 More info: https://docs.opencv.org/3.4/dd/d49/tutorial_py_contour_features.html
 
-# 2D convolution
-
-## Image Smoothing
+# 2D Convolution
 
 Like one-dimensional signals, images can also be filtered with various types of filters, such as low pass filters (FPB), high pass filters (FPA), band pass filters, etc. While an FPB helps to eliminate noise in the image or blur the image, an FPA helps to find the edges in an image.
 The cv2.filter2D () function, available in OpenCV, allows to apply a convolution between a given kernel and an image. An example of a kernel is an averaging filter, like the 5x5 FPB shown below:
@@ -137,6 +135,33 @@ kernel = np.ones((5,5),np.float32)/25
 # Filter the image using the kernel
 dst = cv2.filter2D(image,-1,kernel)
 ```
+
+## Averange
+This filter takes the average of all the pixels under the kernel area and replaces the middle element by this average. An alternative way to do this is by using the cv2.blur () or cv2.boxFilter () functions. When using these functions we have to specify the width and height of the kernel. A 3 × 3 normalized box filter would look like this:
+
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;K=\frac{1}{9}\begin{bmatrix}&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;;\\&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;\end{bmatrix}" title="Matrix" align="center"/>
+
+If you don't want to use a normalized box filter, use cv2.boxFilter () and pass the normalize = False argument to the function.
+```python
+blur = cv2.blur(img,(3,3))
+```
+
+## Gaussian Filter
+In this approach, instead of a box filter consisting of equal coefficients, a Gaussian kernel is used. This is done with the function, cv2.GaussianBlur (). The width and height of the kernel must be passed as input parameters, which must be positive and odd. In addition, the standard deviation must be specified in the X and Y directions,
+sigmaX and sigmaY, respectively. This type of filtering is very effective in removing Gaussian noise from the image.
+
+If only sigmaX is specified, sigmaY is taken as equal to sigmaX. If both are passed as zeros, they are calculated from the kernel size.
+```python
+blur = cv2.GaussianBlur(img,(5,5),0)
+```
+## Median Filter
+This filter calculates the median of all the pixels under the kernel window and the center pixel is replaced with this median value. This is very effective in eliminating noise known as salt and pepper noise. OpenCV has the cv2.medianBlur () function to apply this type of filter to an image. 
+
+As in the Gaussian filter, he kernel size in the median filter has to be a positive odd integer.
+```python
+median = cv2.medianBlur(img,5)
+```
+Reference: https://unipython.com/suavizando-imagenes-con-opencv/
 
 # Local Scale-Invariant Features
 
