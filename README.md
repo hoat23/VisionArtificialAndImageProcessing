@@ -109,6 +109,15 @@ plt.show()
 
 More info: https://docs.opencv.org/3.4/dd/d49/tutorial_py_contour_features.html
 
+# 2D convolution
+
+## Image Smoothing
+
+Like one-dimensional signals, images can also be filtered with various types of filters, such as low pass filters (FPB), high pass filters (FPA), band pass filters, etc. While an FPB helps to eliminate noise in the image or blur the image, an FPA helps to find the edges in an image.
+The cv2.filter2D () function, available in OpenCV, allows to apply a convolution between a given kernel and an image. An example of a kernel is an averaging filter, like the 5x5 FPB shown below:
+
+
+
 # Local Scale-Invariant Features
 
 - Step 1: Compute SIFT descriptors using your favorite SIFT library.
