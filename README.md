@@ -55,6 +55,15 @@ img_black = np.ones_like( img_reference ) * 255
 
 ## Working with contours
 
+### Fuctions
+- cv2.findContours:
+	- cv2.RETR_LIST: Returns all contours. Other methods exist that return only external contours
+	- cv2.RETR_EXTERNAL: Return only external most contours of each shape in image. Example, if this was specified below, the oval shape in the yellow rectangle would not be returned.
+	- cv2.CHAIN_ARPPOX_SIMPLE: Compresses horizontal, vertical and diagonal segments of contours and leaves only their end points.returns a tuple of values, each tuple contains points along a contour.
+	- imutils.grab_contours The problem with the returning tuple is that it is in a different format for OpenCV 2.4, OpenCV 3, OpenCV 3.4, OpenCV 4.0.0-pre, OpenCV 4.0.0-alpha, and OpenCV 4.0.0 (official). This function solves this
+- cv2.drawContours:
+	- Draw returned contours on the clone of original image (or even a blank canvas), and provide thickness of the layer. (-1 for fill shape)
+
 The contours are define by array with the same size of the image original.
 
 ```python
