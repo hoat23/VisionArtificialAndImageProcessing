@@ -55,7 +55,7 @@ img_black = np.ones_like( img_reference ) * 255
 
 ## Working with contours
 
-### Fuctions
+### Functions
 - cv2.findContours:
 	- cv2.RETR_LIST: Returns all contours. Other methods exist that return only external contours
 	- cv2.RETR_EXTERNAL: Return only external most contours of each shape in image. Example, if this was specified below, the oval shape in the yellow rectangle would not be returned.
