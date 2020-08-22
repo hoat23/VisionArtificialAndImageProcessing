@@ -139,7 +139,7 @@ dst = cv2.filter2D(image,-1,kernel)
 ## Averange
 This filter takes the average of all the pixels under the kernel area and replaces the middle element by this average. An alternative way to do this is by using the cv2.blur () or cv2.boxFilter () functions. When using these functions we have to specify the width and height of the kernel. A 3 × 3 normalized box filter would look like this:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;K=\frac{1}{9}\begin{bmatrix}&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;;\\&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;\end{bmatrix}" title="Matrix" align="center"/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;K=\frac{1}{9}\begin{bmatrix}&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;\end{bmatrix}" title="Matrix" align="center"/>
 
 If you don't want to use a normalized box filter, use cv2.boxFilter () and pass the normalize = False argument to the function.
 ```python
