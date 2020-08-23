@@ -56,6 +56,7 @@ img_black = np.ones_like( img_reference ) * 255
 ## Working with contours
 
 ### Functions
+
 - cv2.findContours:
 	- cv2.RETR_LIST: Returns all contours. Other methods exist that return only external contours
 	- cv2.RETR_EXTERNAL: Return only external most contours of each shape in image. Example, if this was specified below, the oval shape in the yellow rectangle would not be returned.
@@ -116,8 +117,9 @@ plt.show()
 <img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_06_contours.png" width="460" align="center"/>
 </div>
 
-More info: https://docs.opencv.org/3.4/dd/d49/tutorial_py_contour_features.html
-
+More info: 
+- https://docs.opencv.org/3.4/dd/d49/tutorial_py_contour_features.html
+- https://www.youtube.com/watch?v=gBn7Ej5iIpI
 # 2D Convolution
 
 Like one-dimensional signals, images can also be filtered with various types of filters, such as low pass filters (FPB), high pass filters (FPA), band pass filters, etc. While an FPB helps to eliminate noise in the image or blur the image, an FPA helps to find the edges in an image.
