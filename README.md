@@ -156,6 +156,10 @@ If only sigmaX is specified, sigmaY is taken as equal to sigmaX. If both are pas
 ```python
 blur = cv2.GaussianBlur(img,(5,5),0)
 ```
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;K=H(u,v)=\frac{1}{16}\begin{bmatrix}&space;1&space;&&space;2&space;&&space;1&space;\\&space;2&space;&&space;4&space;&&space;2&space;\\&space;1&space;&&space;2&space;&&space;1&space;\end{bmatrix}" title="Gaussian Kernel" align="center"/>
+
+Note: The kernel width must be 6 sigma
+
 ## Median Filter
 This filter calculates the median of all the pixels under the kernel window and the center pixel is replaced with this median value. This is very effective in eliminating noise known as salt and pepper noise. OpenCV has the cv2.medianBlur () function to apply this type of filter to an image. 
 
