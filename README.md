@@ -124,9 +124,11 @@ More info:
 
 Like one-dimensional signals, images can also be filtered with various types of filters, such as low pass filters (FPB), high pass filters (FPA), band pass filters, etc. While an FPB helps to eliminate noise in the image or blur the image, an FPA helps to find the edges in an image.
 The cv2.filter2D () function, available in OpenCV, allows to apply a convolution between a given kernel and an image. An example of a kernel is an averaging filter, like the 5x5 FPB shown below:
+
 <div align="center">
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;K=\frac{1}{25}\begin{bmatrix}&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;&&space;1&space;\end{bmatrix}" title="Matrix" align="center"/>
 </div>
+
 Filtering a given image with the above kernel works as follows: a 5 × 5 window is centered on each pixel of the image. The pixels contained in this window are added and divided by 25, and the resulting value is assigned to the pixel.
 This is equivalent to calculating the average value of the falling pixels in the 5 × 5 window. The operation is repeated on all the pixels of the image, giving rise to the filtered image. The following code generates the K kernel and applies it to an image:
 
@@ -140,10 +142,13 @@ dst = cv2.filter2D(image,-1,kernel)
 
 ## Averange
 This filter takes the average of all the pixels under the kernel area and replaces the middle element by this average. An alternative way to do this is by using the cv2.blur () or cv2.boxFilter () functions. When using these functions we have to specify the width and height of the kernel. A 3 × 3 normalized box filter would look like this:
+
 <div align="center">
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;K=\frac{1}{9}\begin{bmatrix}&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;\\&space;1&space;&&space;1&space;&&space;1&space;\end{bmatrix}" title="Matrix" align="center"/>
 </div>
+
 If you don't want to use a normalized box filter, use cv2.boxFilter () and pass the normalize = False argument to the function.
+
 ```python
 blur = cv2.blur(img,(3,3))
 ```
@@ -153,20 +158,26 @@ In this approach, instead of a box filter consisting of equal coefficients, a Ga
 sigmaX and sigmaY, respectively. This type of filtering is very effective in removing Gaussian noise from the image.
 
 If only sigmaX is specified, sigmaY is taken as equal to sigmaX. If both are passed as zeros, they are calculated from the kernel size.
+
 ```python
 blur = cv2.GaussianBlur(img,(5,5),0)
 ```
+
 <div align="center">
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;K=H(u,v)=\frac{1}{16}\begin{bmatrix}&space;1&space;&&space;2&space;&&space;1&space;\\&space;2&space;&&space;4&space;&&space;2&space;\\&space;1&space;&&space;2&space;&&space;1&space;\end{bmatrix}" title="Gaussian Kernel" align="center"/>
 </div>
+
 Note: The kernel width must be 6 sigma
 
+<div align="center">
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;h(u,v)=\frac{1}{2\pi\sigma^{2}}e^{-\frac{u^{2}+v^{2}}{\sigma^{2}}}" title="Gaussian Kernel" align="center"/>
+</div>
 
 ## Median Filter
 This filter calculates the median of all the pixels under the kernel window and the center pixel is replaced with this median value. This is very effective in eliminating noise known as salt and pepper noise. OpenCV has the cv2.medianBlur () function to apply this type of filter to an image. 
 
 As in the Gaussian filter, he kernel size in the median filter has to be a positive odd integer.
+
 ```python
 median = cv2.medianBlur(img,5)
 ```
