@@ -173,11 +173,18 @@ median = cv2.medianBlur(img,5)
 The median is a robust estimator against outliers.
 
 <div align="center">
-<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_08_deleting_outlier_with_median.png" width="200" align="center"/>
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_08_deleting_outlier_with_median.png" width="400" align="center"/>
 </div>
 
-Reference: https://unipython.com/suavizando-imagenes-con-opencv/
+A example of aplying median filter:
 
+<div align="center">
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_09_applying_median_filter.png" width="400" align="center"/>
+</div>
+
+Reference: 
+- https://unipython.com/suavizando-imagenes-con-opencv/
+- http://www.dccia.ua.es/dccia/inf/asignaturas/Vision/vision-tema2.pdf
 # Local Scale-Invariant Features
 
 - Step 1: Compute SIFT descriptors using your favorite SIFT library.
