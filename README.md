@@ -1,5 +1,36 @@
 # VisionArtificialAndImageProcessing
 
+
+# LIGHTING CONDITIONS
+
+In general, your lighting conditions should have three primary goals. Let’s review them below.
+
+## High Contrast
+
+Maximize the contrast between the Regions of Interest in your image (objects you want to detect, extract, describe classify, manipulate, etc. should have sufficiently high contrast from the rest of the image so they are easily detectable).
+Generalizable
+
+Your lighting conditions should be consistent enough that they work well from one object to the next. If our goal is to identify various United States coins in an image, our lighting conditions should be generalizable enough to facilitate in the coin identification, whether we are examining a penny, nickel, dime, or quarter.
+Stable
+
+Having stable, consistent, and repeatable lighting conditions is the holy grail of computer vision application development. However, it’s often hard (if not impossible) to guarantee — this is especially true if we are developing computer vision algorithms that are intended to work in outdoor lighting conditions. As the time of day changes, clouds roll in over the sun, and rain starts to pour, our lighting conditions will obviously change.
+
+## COLOR SPACES
+- RGB
+- HSV
+  - Hue: Which “pure” color we are examining. For example, all shadows and tones of the color “red” will have the same Hue.
+  - Saturation: How “white” the color is. A fully saturated color would be pure, as in “pure red.” And a color with zero saturation would be pure white.
+  - Value: The Value allows us to control the lightness of our color. A Value of zero would indicate pure black, whereas increasing the value would produce lighter colors.
+  - Useful when building applications where we are tracking color of some object in an image.
+  - Easier to define valid color range using HSV than it is RGB
+- L*a*b:
+  - RGB is non-intuitive when defining exact shades of a color or specifyig a particular range of colors
+  - HSV color space is more intuitive but does not do the best job in representing how humans see and interpret colors in images.
+  - L*a*b goal is to mimic the methodology in which humans see and interpret color.
+  - L-channel: Lightness of pixel. This value goes up and doesn the vertical axis, white to black, with neutral grays at the center of the axis.
+  - a-channel: Originates from the center of the L-channel and defines pure green on one end of spectrum and pure red on the other.
+  - b-channel: Also originates from the center of the L-channel but is perpendicular to the a-channel. The b-channel defines pure blue at one end of spectrum and pure yellow at the other
+
 A image 2x2[px] representation in RGB is:
 ```
 #img = numpy.zeros([2,2,3], dtype='uint8')
