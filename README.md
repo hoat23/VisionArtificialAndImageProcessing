@@ -1,7 +1,7 @@
-# VisionArtificialAndImageProcessing
+# VISION ARTIFICIAL AND IMAGE PROCESSING
 
 
-# LIGHTING CONDITIONS
+# Lighting conditions
 
 In general, your lighting conditions should have three primary goals. Let’s review them below.
 
@@ -30,6 +30,8 @@ Having stable, consistent, and repeatable lighting conditions is the holy grail 
   - L-channel: Lightness of pixel. This value goes up and doesn the vertical axis, white to black, with neutral grays at the center of the axis.
   - a-channel: Originates from the center of the L-channel and defines pure green on one end of spectrum and pure red on the other.
   - b-channel: Also originates from the center of the L-channel but is perpendicular to the a-channel. The b-channel defines pure blue at one end of spectrum and pure yellow at the other
+
+# Image representation 
 
 A image 2x2[px] representation in RGB is:
 ```
