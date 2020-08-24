@@ -160,6 +160,8 @@ blur = cv2.GaussianBlur(img,(5,5),0)
 
 Note: The kernel width must be 6 sigma
 
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;h(u,v)=\frac{1}{2\pi\sigma^{2}}e^{-\frac{u^{2}+v^{2}}{\sigma^{2}}}" title="Gaussian Kernel" align="center"/>
+
 ## Median Filter
 This filter calculates the median of all the pixels under the kernel window and the center pixel is replaced with this median value. This is very effective in eliminating noise known as salt and pepper noise. OpenCV has the cv2.medianBlur () function to apply this type of filter to an image. 
 
