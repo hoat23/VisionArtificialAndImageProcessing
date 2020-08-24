@@ -169,6 +169,13 @@ As in the Gaussian filter, he kernel size in the median filter has to be a posit
 ```python
 median = cv2.medianBlur(img,5)
 ```
+
+The median is a robust estimator against outliers.
+
+<div align="center">
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/img_08_deleting_outlier_with_median.png" width="200" align="center"/>
+</div>
+
 Reference: https://unipython.com/suavizando-imagenes-con-opencv/
 
 # Local Scale-Invariant Features
