@@ -65,20 +65,22 @@ def histogram(img, color=('r','g','b'),scale=1):
       list_histr.append(histr)
   return list_histr
 #######################################################################################
-def plt_render(render=True):
-    if render:
-       plt.show()
-def create_subplot(fig, rows, columns, i, img, title=None,render=False):
-    fig.add_subplot(rows, columns, i)
-    plot_img(img, title=title,render=render)
+def plt_render(flag_render=True):
+  if flag_render:
+    plt.show()
+  return
 
-def plot_histogram(list_histr,color=('r','g','b'),title=None,render=True):
-    for i,col in enumerate(color):
-      plt.plot(list_histr[i],color = col)
-      plt.xlim([0,256]) #plt.ylim([0,1])
-    plt_render(render=render)
+def create_subplot(fig, rows, columns, i, img, title=None, flag_render=False):
+  fig.add_subplot(rows, columns, i)
+  plot_img(img, title=title, flag_render=flag_render)
 
-def plot_img(img, title=None, cmap=None, divison=50.0, usefigure=False, render=True):
+def plot_histogram(list_histr, color=('r','g','b'), title=None, flag_render=True):
+  for i,col in enumerate(color):
+    plt.plot(list_histr[i],color = col)
+    plt.xlim([0,256]) #plt.ylim([0,1])
+  plt_render(flag_render=flag_render)
+
+def plot_img(img, title=None, cmap=None, divison=50.0, usefigure=False, flag_render=True):
   if img.ndim == 3:
      img = img[:,:,::-1]
   if usefigure:
@@ -86,9 +88,10 @@ def plot_img(img, title=None, cmap=None, divison=50.0, usefigure=False, render=T
      height = img.shape[0] / division
      f = plt.figure(figsize=(width, height))
   plt.title(title)
-  plt_render(render=render) #cmap="gray"
+  #cmap="gray"
+  plt_render(flag_render=flag_render)
 
-def plot_list_img(list_img, rows=1, cols=2, axis='off', render=True):
+def plot_list_img(list_img, rows=1, cols=2, axis='off', flag_render=True):
   size = rows * cols 
   if size < len(list_img):
     rows = int(len(list_img)/cols)
@@ -97,7 +100,7 @@ def plot_list_img(list_img, rows=1, cols=2, axis='off', render=True):
     title = "Img{0:02d}".format(num)
     plt.subplot(rows,cols,num+1)
     plt.axis(axis)
-    plot_img(img, title=title, render=render)
+    plot_img(img, title=title, flag_render=flag_render)
 #######################################################################################
 	
 """
