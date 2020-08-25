@@ -1,7 +1,7 @@
 # coding: utf-8
 # Developer: Deiner Zapata Silva.
 # Date: 13/07/2020
-# Last update: 13/07/2020
+# Last update: 25/08/2020
 # Description: Basic Algorithms by image processing
 #######################################################################################
 import os
@@ -65,17 +65,20 @@ def histogram(img, color=('r','g','b'),scale=1):
       list_histr.append(histr)
   return list_histr
 #######################################################################################
-def create_subplot(fig, rows, columns, i, img, title=None):
+def plt_render(render=True):
+    if render:
+       plt.imshow()
+def create_subplot(fig, rows, columns, i, img, title=None,render=False):
     fig.add_subplot(rows, columns, i)
-    plot_img(img, title=title)
+    plot_img(img, title=title,render=render)
 
-def plot_histogram(list_histr,color=('r','g','b'),title=None):
+def plot_histogram(list_histr,color=('r','g','b'),title=None,render=True):
     for i,col in enumerate(color):
       plt.plot(list_histr[i],color = col)
       plt.xlim([0,256]) #plt.ylim([0,1])
-    plt.show()
+    plt_render(render=render)
 
-def plot_img(img, title=None, cmap=None, divison=50.0, usefigure=False):
+def plot_img(img, title=None, cmap=None, divison=50.0, usefigure=False, render=True):
   if img.ndim == 3:
      img = img[:,:,::-1]
   if usefigure:
@@ -83,9 +86,9 @@ def plot_img(img, title=None, cmap=None, divison=50.0, usefigure=False):
      height = img.shape[0] / division
      f = plt.figure(figsize=(width, height))
   plt.title(title)
-  plt.imshow(img, cmap=None) #cmap="gray"
+  plt_render(render=render) #cmap="gray"
 
-def plot_list_img(list_img, rows=1, cols=2, axis='off'):
+def plot_list_img(list_img, rows=1, cols=2, axis='off', render=True):
   size = rows * cols 
   if size < len(list_img):
     rows = int(len(list_img)/cols)
@@ -94,7 +97,7 @@ def plot_list_img(list_img, rows=1, cols=2, axis='off'):
     title = "Img{0:02d}".format(num)
     plt.subplot(rows,cols,num+1)
     plt.axis(axis)
-    plot_img(img, title=title)
+    plot_img(img, title=title, render=render)
 #######################################################################################
 	
 """
