@@ -88,7 +88,7 @@ def plot_img(img, title=None, cmap=None, divison=50.0, usefigure=False, flag_ren
      height = img.shape[0] / division
      f = plt.figure(figsize=(width, height))
   plt.title(title)
-  #cmap="gray"
+  plt.imshow(img, cmap=cmap)#cmap="gray"
   plt_render(flag_render=flag_render)
 
 def plot_list_img(list_img, rows=1, cols=2, axis='off', flag_render=True):
