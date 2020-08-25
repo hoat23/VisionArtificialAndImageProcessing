@@ -67,7 +67,7 @@ def histogram(img, color=('r','g','b'),scale=1):
 #######################################################################################
 def plt_render(render=True):
     if render:
-       plt.imshow()
+       plt.show()
 def create_subplot(fig, rows, columns, i, img, title=None,render=False):
     fig.add_subplot(rows, columns, i)
     plot_img(img, title=title,render=render)
