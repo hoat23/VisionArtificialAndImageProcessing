@@ -65,32 +65,36 @@ def histogram(img, color=('r','g','b'),scale=1):
       list_histr.append(histr)
   return list_histr
 #######################################################################################
+def create_subplot(fig, rows, columns, i, img, title=None):
+    fig.add_subplot(rows, columns, i)
+    plot_img(img, title=title)
 
-def plot_histogram(list_histr,color=('r','g','b')):
+def plot_histogram(list_histr,color=('r','g','b'),title=None):
     for i,col in enumerate(color):
       plt.plot(list_histr[i],color = col)
-      plt.xlim([0,256])
-      #plt.ylim([0,1])
+      plt.xlim([0,256]) #plt.ylim([0,1])
     plt.show()
 
-def plot_img(img):
-  width = img.shape[1] / 50.0
-  height = img.shape[0] * width/img.shape[1]
-  f = plt.figure(figsize=(width, height))
-  plt.imshow(img)
+def plot_img(img, title=None, cmap=None, divison=50.0, usefigure=False):
+  if img.ndim == 3:
+     img = img[:,:,::-1]
+  if usefigure:
+     width = img.shape[1] / division
+     height = img.shape[0] / division
+     f = plt.figure(figsize=(width, height))
+  plt.title(title)
+  plt.imshow(img, cmap=None) #cmap="gray"
 
 def plot_list_img(list_img, rows=1, cols=2, axis='off'):
   size = rows * cols 
   if size < len(list_img):
     rows = int(len(list_img)/cols)
+  
   for num, img in enumerate(list_img):
     title = "Img{0:02d}".format(num)
     plt.subplot(rows,cols,num+1)
-    plt.title(title)
     plt.axis(axis)
-    plt.imshow(img)
-    #print("[{0:02d} | {1:02d}] [{2}]".format(rows,cols, title))
-
+    plot_img(img, title=title)
 #######################################################################################
 	
 """
