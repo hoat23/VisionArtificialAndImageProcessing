@@ -66,6 +66,16 @@ Adding the alpha mask to image
 img_4ch = np.dstack([bgr, alpha])
 cv2.imwrite("img_4ch.png", img_4ch)
 ```
+## Basic Image Descriptors
+
+Extract mean and stdev from each channel
+```python
+(means, stds) = cv2.meanStdDev(img)
+print("num_channels:", img.ndim)
+print("size        :", img.shape[:2])
+print("means       :", means.flatten())
+print("stds        :", stds.flatten())
+```
 
 # Useful commands
 
