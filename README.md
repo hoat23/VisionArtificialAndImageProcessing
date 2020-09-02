@@ -305,7 +305,22 @@ zernike will give measure about how the mass is distributed all over image.
 Local binary pattern will give measure of how many pixels represent a particular code.
 
 ## Haralick Features
-Haralick Features which is a combination of feature vector which provides 13 useful statistical features.
+Haralick Features which is a combination of feature vector which provides 14 useful statistical features.
+
+- x(1)  Angular Second Moment (Energy).
+- x(2)  Contrast.
+- x(3)  Correlation.
+- x(4)  Variance.
+- x(5)  Inverse Difference Moment (Homogeneity).
+- x(6)  Sum Average.
+- x(7)  Sum Variance.
+- x(8)  Sum Entropy.
+- x(9)  Entropy.
+- x(10) Difference Variance.
+- x(11) Difference Entropy.
+- x(12) Information Measure of Correlation I.
+- x(13) Information Measure of Correlation II.
+- x(14) Maximal Correlation Coefficien.
 
 # Clasification  Methodology
 
@@ -318,6 +333,7 @@ Haralick Features which is a combination of feature vector which provides 13 use
 - https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf
 - https://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12/arandjelovic12.pdf
 - https://www.pyimagesearch.com/2015/04/13/implementing-rootsift-in-python-and-opencv/
+- https://www.pcigeomatics.com/geomatica-help/references/pciFunction_r/python/P_tex.html
 
 # Usefull Formules 
 
