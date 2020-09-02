@@ -240,15 +240,20 @@ A example of aplying median filter:
 Reference: 
 - https://unipython.com/suavizando-imagenes-con-opencv/
 - http://www.dccia.ua.es/dccia/inf/asignaturas/Vision/vision-tema2.pdf
-# Local Scale-Invariant Features
+
+# Features Extraction
+
+## Local Scale-Invariant Features
+
+A robust interest detector SIFT is applied which is tweaked with center of mass algorithm which localizes the spliced object and only nearest points are used concentrically with respect to coordinates of center of mass of given image.
 
 - Step 1: Compute SIFT descriptors using your favorite SIFT library.
 - Step 2: L1-normalize each SIFT vector.
 - Step 3: Take the square root of each element in the SIFT vector. Then the vectors are L2 normalized
 
-## Code
+### Code
 
-### Clase RootSIFT (rootsift.py)
+#### Clase RootSIFT (rootsift.py)
 ```python
 # import the necessary packages
 import numpy as np
@@ -272,7 +277,7 @@ class RootSIFT:
 		return (kps, descs)
 ```
 
-### Runing
+#### Runing
 ```python
 # import the necessary packages
 from rootsift import RootSIFT
@@ -293,12 +298,28 @@ rs = RootSIFT()
 (kps, descs) = rs.compute(gray, kps)
 print "RootSIFT: kps=%d, descriptors=%s " % (len(kps), descs.shape)
 ```
-Reference: 
+## Zernike moments
+zernike will give measure about how the mass is distributed all over image.
+
+## Local binary pattern
+Local binary pattern will give measure of how many pixels represent a particular code.
+
+## Haralick Features
+Haralick Features which is a combination of feature vector which provides 13 useful statistical features.
+
+# Clasification  Methodology
+
+- Effective morphology based image filtering techniques are used to reduce the noise and get prominent edge map.
+- Final feature vector by applying PCA which reduces dimention to a fixed component and final feature vector is feeded to SVM classifier for training model.
+- N-fold cross validation is used to get minimally overfitted and accurate model.
+
+## Reference: 
+
 - https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf
 - https://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12/arandjelovic12.pdf
 - https://www.pyimagesearch.com/2015/04/13/implementing-rootsift-in-python-and-opencv/
 
-# Useful Formules 
+# Usefull Formules 
 
 ### L1 Normalize 
 
