@@ -8,6 +8,7 @@ import os
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+from glob import glob
 from urllib.request import urlopen
 #######################################################################################
 ##########################   Global Variables  ########################################
@@ -102,15 +103,11 @@ def plot_list_img(list_img, rows=1, cols=2, axis='off', flag_render=True):
     plt.axis(axis)
     plot_img(img, title=title, flag_render=flag_render)
 #######################################################################################
-	
-"""
-def get_list_img(directory):
-  global directory_work
-  os.chdir(directory_work+directory)
-  list_img = !ls -1 *.jpg
-  os.chdir(directory_work)
+def get_list_img(directory, filter='*'):
+  #filters can be too like : *.jpg *.png
+  list_img = glob('.{0}/{1}'.format(directory, filter))
   return list_img
-"""
+
 def get_mask_by_color(img, color_filter):
   hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
   #np.array([0,120,70]) np.array([10,255,255])
