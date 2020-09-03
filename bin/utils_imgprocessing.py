@@ -105,7 +105,10 @@ def plot_list_img(list_img, rows=1, cols=2, axis='off', flag_render=True):
 #######################################################################################
 def get_list_img(directory, filter='*'):
   #filters can be too like : *.jpg *.png
-  list_img = glob('.{0}/{1}'.format(directory, filter))
+  global directory_work
+  os.chdir(directory_work+directory)
+  list_img = glob(filter)
+  os.chdir(directory_work)
   return list_img
 
 def get_mask_by_color(img, color_filter):
