@@ -368,3 +368,4 @@ exec( load_code_from_url(url_code_github) )
 # More info
 - https://www.w3resource.com/python/built-in-function/compile.php
 - http://haralick.org/journals/
+- https://www.pcigeomatics.com/geomatica-help/references/pciFunction_r/python/P_tex.html
