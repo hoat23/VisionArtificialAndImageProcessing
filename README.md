@@ -338,13 +338,14 @@ Haralick Features which is a combination of feature vector which provides 14 use
 # Usefull Formules 
 
 ### L1 Normalize 
-
+<div align="center">
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;S=\sum_{i=1}^{n}%20{\mid}y_i-f(x_i){\mid}" title="L1 normalize" align="center"/>
+</div>
 
 ### L2 Normalize
-
+<div align="center">
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;S=\sum_{i=1}^{n}%20(y_i-f(x_i))^2" title="L2 normalize" align="center"/>
-
+</div>
 
 # Utilities 
 
@@ -364,4 +365,6 @@ url_code_github = "https://raw.githubusercontent.com/hoat23/VisionArtificialAndI
 exec( load_code_from_url(url_code_github) )
 ```
 
-More info: https://www.w3resource.com/python/built-in-function/compile.php
+# More info
+- https://www.w3resource.com/python/built-in-function/compile.php
+- http://haralick.org/journals/
