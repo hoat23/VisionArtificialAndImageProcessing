@@ -102,6 +102,19 @@ def plot_list_img(list_img, rows=1, cols=2, axis='off', flag_render=True):
     plt.subplot(rows,cols,num+1)
     plt.axis(axis)
     plot_img(img, title=title, flag_render=flag_render)
+	
+def plot_compare(img_original, img_after):
+  # Ploting
+  fig, axes = plt.subplots(1, 2, figsize=(20, 20), sharex=True, sharey=True)
+  ax = axes.ravel()
+  ax[0].imshow(img_original, cmap=plt.cm.gray)
+  ax[0].set_title('Original')
+  ax[0].axis('on')
+  ax[1].imshow(img_after, cmap=plt.cm.gray)
+  ax[1].set_title('Filtered')
+  ax[1].axis('on')
+  fig.tight_layout()
+  plt.show()
 #######################################################################################
 def get_list_img(directory, filter='*'):
   #filters can be too like : *.jpg *.png
@@ -250,3 +263,9 @@ def skeletonize(image, size, structuring=cv2.MORPH_RECT):
 
     # return the skeletonized image
     return skeleton
+
+def median_filtered(img_original, size=7, plot=False):
+  img_work = img_original.copy()
+  img_filtered = cv2.medianBlur(img_work, size)
+  if plot: plot_compare(img_original, img_filtered)
+  return img_filtered
