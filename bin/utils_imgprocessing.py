@@ -176,6 +176,12 @@ def converting_color(img_src, code=cv2.COLOR_BGR2RGB):
   return img_out
 
 #######################################################################################
+def filter_image_by_mask(img_work, mask, render=False):
+  img_filtered = cv2.bitwise_and(img_work, img_work, mask=mask)
+  if render:
+    plot_compare(img_work, img_filtered)
+  return img_filtered
+#######################################################################################
 def filter_using_matrix(filter_value, matrix_orig, labels, fill_value = np.nan):
     mask_filter = np.where(labels == filter_value, labels, fill_value)
     matrix_filter = np.where( mask_filter == filter_value , matrix_orig, mask_filter)
