@@ -249,19 +249,19 @@ The normalization is a process that changes the range of pixel intensity values.
 Normalization transforms an n-dimensional grayscale image 
 <div align="center">
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;I:\{{\mathbb{X}}\subseteq{\mathbb{R}}^{n}\}\rightarrow \{{\text{Min}},..,{\text{Max}}\}"/> 
-<div/>
+</div>
 
-With intensity values in the range (Min,Max), into a new image 
+With intensity values in the range (Min,Max), into a new image:
 <div align="center">
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;I_{N}:\{{\mathbb{X}}\subseteq%20{\mathbb%20{R}}^{n}\}\rightarrow\{{\text{newMin}},..,{\text{newMax}}\}"/>
-<div/>
+</div>
 
 With intensity values in the range (newMin,newMax).
 
 The linear normalization of a grayscale digital image is performed according to the formula:
 <div align="center">
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;I_{N}=({{\text{newMax}}-{\text{newMin}}})%20({\frac{{I-{\text{Min}}}%20} {{\text{Max}}-{\text{Min}}}})+{\text{newMin}}"/>
-<div/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;I_{N}=({{\text{newMax}}-{\text{newMin}}})%20({\frac{{I-{\text{Min}}}%20}{{\text{Max}}-{\text{Min}}}})+{\text{newMin}}"/>
+</div>
 
 # Histogram Equalization
 
