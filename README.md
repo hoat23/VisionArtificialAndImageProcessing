@@ -244,6 +244,11 @@ Reference:
 # Histogram
 
 # Histogram Equalization
+
+<div align="center">
+<img src="https://github.com/hoat23/VisionArtificialAndImageProcessing/blob/master/img/histogram_normalization_img01.png" width="400" align="center"/>
+</div>
+
 ```
 img_original = [ [52,	55,	61,	59,	79,	61,	76,	61]
 		 [62,	59,	55,	104,	94,	85,	59,	71]
