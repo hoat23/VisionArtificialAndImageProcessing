@@ -248,12 +248,12 @@ The normalization is a process that changes the range of pixel intensity values.
 
 Normalization transforms an n-dimensional grayscale image 
 <div align="center">
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;I:\{{\mathbb{X}}\subseteq{\mathbb{R}}^{n}\}\rightarrow \{{\text{Min}},..,{\text{Max}}\}"/> 
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;I:\{{\mathbb{X}}\subseteq{\mathbb{R}}^{n}\}\rightarrow\{{\text{Min}},..,{\text{Max}}\}" width="20"/> 
 </div>
 
 With intensity values in the range (Min,Max), into a new image:
 <div align="center">
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;I_{N}:\{{\mathbb{X}}\subseteq%20{\mathbb%20{R}}^{n}\}\rightarrow\{{\text{newMin}},..,{\text{newMax}}\}"/>
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;I_{N}:\{{\mathbb{X}}\subseteq%20{\mathbb%20{R}}^{n}\}\rightarrow\{{\text{newMin}},..,{\text{newMax}}\}" width="20"/>
 </div>
 
 With intensity values in the range (newMin,newMax).
