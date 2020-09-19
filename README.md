@@ -244,6 +244,10 @@ Reference:
 # Image Pre-Processing
 
 # Image Normalization
+The normalization is a process that changes the range of pixel intensity values. 
+
+Normalization transforms an n-dimensional grayscale image
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;{\displaystyle I:\{\mathbb {X} \subseteq \mathbb {R} ^{n}\}\rightarrow \{{\text{Min}},..,{\text{Max}}\}}I:\{{\mathbb  {X}}\subseteq {\mathbb  {R}}^{n}\}\rightarrow \{{\text{Min}},..,{\text{Max}}\}" title="L2 normalize" align="center"/>
 
 The linear normalization of a grayscale digital image is performed according to the formula
 {\displaystyle I_{N}=(I-{\text{Min}}){\frac {{\text{newMax}}-{\text{newMin}}}{{\text{Max}}-{\text{Min}}}}+{\text{newMin}}}I_{N}=(I-{\text{Min}}){\frac  {{\text{newMax}}-{\text{newMin}}}{{\text{Max}}-{\text{Min}}}}+{\text{newMin}}
