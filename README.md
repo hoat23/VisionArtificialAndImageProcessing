@@ -246,11 +246,12 @@ Reference:
 # Image Normalization
 The normalization is a process that changes the range of pixel intensity values. 
 
-Normalization transforms an n-dimensional grayscale image
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;I:\{{\mathbb  {X}}\subseteq {\mathbb  {R}}^{n}\}\rightarrow \{{\text{Min}},..,{\text{Max}}\}" title="L2 normalize" align="center"/>
+Normalization transforms an n-dimensional grayscale image <img src="https://latex.codecogs.com/svg.latex?\Large&space;I:\{{\mathbb{X}}\subseteq{\mathbb{R}}^{n}\}\rightarrow \{{\text{Min}},..,{\text{Max}}\}"/> with intensity values in the range (Min,Max), into a new image <img src="https://latex.codecogs.com/svg.latex?\Large&space;{\displaystyle%20I_{N}:\{\mathbb {X}%20\subseteq%20\mathbb%20{R}^{n}\}\rightarrow \{{\text{newMin}},..,{\text{newMax}}\}}I_{N}:\{{\mathbb  {X}}\subseteq%20{\mathbb%20{R}}^{n}\}\rightarrow \{{\text{newMin}},..,{\text{newMax}}\}"/> with intensity values in the range (newMin,newMax).
 
-The linear normalization of a grayscale digital image is performed according to the formula
-{\displaystyle I_{N}=(I-{\text{Min}}){\frac {{\text{newMax}}-{\text{newMin}}}{{\text{Max}}-{\text{Min}}}}+{\text{newMin}}}I_{N}=(I-{\text{Min}}){\frac  {{\text{newMax}}-{\text{newMin}}}{{\text{Max}}-{\text{Min}}}}+{\text{newMin}}
+The linear normalization of a grayscale digital image is performed according to the formula:
+<div align="center">
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;I_{N}=({{\text{newMax}}-{\text{newMin}}})%20{\frac{%20I-{\text{Min}}%20} {{\text{Max}}-{\text{Min}}}}+{\text{newMin}}"/>
+<div/>
 
 # Histogram Equalization
 
