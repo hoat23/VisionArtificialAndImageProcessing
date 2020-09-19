@@ -241,7 +241,12 @@ Reference:
 - https://unipython.com/suavizando-imagenes-con-opencv/
 - http://www.dccia.ua.es/dccia/inf/asignaturas/Vision/vision-tema2.pdf
 
-# Histogram
+# Image Pre-Processing
+
+# Image Normalization
+
+The linear normalization of a grayscale digital image is performed according to the formula
+{\displaystyle I_{N}=(I-{\text{Min}}){\frac {{\text{newMax}}-{\text{newMin}}}{{\text{Max}}-{\text{Min}}}}+{\text{newMin}}}I_{N}=(I-{\text{Min}}){\frac  {{\text{newMax}}-{\text{newMin}}}{{\text{Max}}-{\text{Min}}}}+{\text{newMin}}
 
 # Histogram Equalization
 
