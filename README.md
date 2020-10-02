@@ -372,6 +372,13 @@ Haralick Features which is a combination of feature vector which provides 14 use
 - https://www.pyimagesearch.com/2015/04/13/implementing-rootsift-in-python-and-opencv/
 - https://www.pcigeomatics.com/geomatica-help/references/pciFunction_r/python/P_tex.html
 
+# Standard colored texture database
+
+- Colored Brodatz Texture (CBT) has 111 images of 640x640 pixels
+- Vistex, from MIT has 54 images of 512x512 pixels
+- Outex, was developed at the Universit of Oulu, Finland. The images has size of 746x538 pixels.
+- NTH-TIPS2b has 1,188 images of 200x200 pixels.
+
 # Usefull Formules 
 
 ### L1 Normalize 
