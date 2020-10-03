@@ -374,7 +374,7 @@ Haralick Features which is a combination of feature vector which provides 14 use
 
 # Standard colored texture database
 
-- Colored Brodatz Texture (CBT) has 111 images of 640x640 pixels [BrodatzDatabase]https://multibandtexture.recherche.usherbrooke.ca/colored%20_brodatz.html
+- Colored Brodatz Texture (CBT) has 111 images of 640x640 pixels [BrodatzDatabase](https://multibandtexture.recherche.usherbrooke.ca/colored%20_brodatz.html)
 - Vistex, from MIT has 54 images of 512x512 pixels [FoodDatabase](https://vismod.media.mit.edu/vismod/imagery/VisionTexture/Images/Reference/Food/)
 - Outex, was developed at the Universit of Oulu, Finland. The images has size of 746x538 pixels.
 - NTH-TIPS2b has 1,188 images of 200x200 pixels.
