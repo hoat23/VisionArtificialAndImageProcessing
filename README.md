@@ -416,3 +416,4 @@ exec( load_code_from_url(url_code_github) )
 - https://github.com/wkentaro/labelme/tree/master/examples/tutorial
 - https://github.com/julienmaitre/Mineral-Recognition
 - http://repositorio.uchile.cl/bitstream/handle/2250/168770/Classification-of-rock-lithology.pdf?sequence=1&isAllowed=y
+- https://www.youtube.com/watch?v=XrCAvs9AePM
